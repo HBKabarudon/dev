@@ -1,0 +1,22 @@
+@use "../global" as *;
+
+/* ===================================================================
+
+transition style
+
+=================================================================== */
+// transition
+
+@for $i from 0 through 20 {
+  $s: calc($i / 10);
+  .ts-#{$i} {
+    transition: #{$s}s;
+  }
+}
+
+@for $i from 0 through 20 {
+  $s: calc($i / 10);
+  .ts-d-#{$i} {
+    transition-delay: #{$s}s;
+  }
+}

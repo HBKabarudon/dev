@@ -1,0 +1,98 @@
+@use "../global" as *;
+
+/* ===================================================================
+
+borders style
+
+=================================================================== */
+
+/* border-color border-style用設定 */
+
+@mixin borderDefault() {
+  border-style: solid;
+  border-color: inherit;
+}
+
+/* border4辺汎用class */
+
+@for $i from 0 through 10 {
+  @include mqAll("bd") {
+    &-#{$i} {
+      border-width: #{$i}px;
+      @include borderDefault;
+    }
+  }
+}
+
+/* border1辺用汎用class */
+
+@for $i from 0 through 10 {
+  @include mqAll("bd") {
+    &-b-w-#{$i} {
+      border-bottom-width: #{$i}px;
+      @include borderDefault;
+    }
+    &-t-w-#{$i} {
+      border-top-width: #{$i}px;
+      @include borderDefault;
+    }
+    &-l-w-#{$i} {
+      border-left-width: #{$i}px;
+      @include borderDefault;
+    }
+    &-r-w-#{$i} {
+      border-right-width: #{$i}px;
+      @include borderDefault;
+    }
+    &-w-#{$i} {
+      border-width: #{$i}px;
+      @include borderDefault;
+    }
+  }
+}
+
+// border-color用汎用class
+@each $key, $color in $colorList {
+  @include mqAll("bd") {
+    &-c-#{$key} {
+      border-color: $color;
+    }
+  }
+}
+
+// border-style用汎用class
+.bd-s-solid {
+  border-style: solid;
+}
+
+.bd-s-dashed {
+  border-style: dashed;
+}
+
+.bd-s-dotted {
+  border-style: dotted;
+}
+
+.bd-s-double {
+  border-style: double;
+}
+
+.bd-s-groove {
+  border-style: groove;
+}
+
+.bd-s-ridge {
+  border-style: ridge;
+}
+
+.bd-s-none {
+  border-style: none;
+}
+
+/* border-radius汎用class */
+
+@each $key, $radius in $borderRadiusList {
+  .bd-rd-#{$key} {
+    border-radius: $radius;
+  }
+}

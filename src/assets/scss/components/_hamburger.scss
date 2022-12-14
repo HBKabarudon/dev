@@ -1,0 +1,141 @@
+@use "../global" as *;
+
+/* ===================================================================
+
+component style
+
+=================================================================== */
+//ハンバーガーメニュー
+$hmenu-width: 30px; // ハンバーガーメニュー バー横幅
+$hmenu-height: 1px; // ハンバーガーメニュー バー縦幅
+$hmenu-space: 10px; // ハンバーガーメニュー バー間隔
+
+.c-globalmenu-button {
+  background-color: transparent;
+  border: 0;
+  position: fixed;
+  width: $hmenu-width;
+  padding-bottom: $hmenu-width;
+  right: 2%;
+  top: 20px;
+  cursor: pointer;
+  z-index: 101;
+  @include mqS {
+    top: 10px;
+  }
+
+  .p-globalmenu-bar {
+    display: block;
+    width: $hmenu-width;
+    height: $hmenu-height;
+    position: absolute;
+    left: 0;
+    transition: 0.5s ease;
+  }
+
+  .p-globalmenu-bar--1 {
+    top: 0;
+    background-color: #000;
+
+    &.is-open {
+      top: calc($hmenu-space);
+      transform: rotate(405deg);
+      transition-duration: 0.4s;
+      transition-delay: 0.2s;
+    }
+  }
+
+  .p-globalmenu-bar--2 {
+    top: calc($hmenu-space);
+    background-color: #000;
+    width: $hmenu-width;
+
+    &.is-open {
+      transform: scaleX(0);
+      transition: 0.2s;
+    }
+  }
+
+  .p-globalmenu-bar--3 {
+    top: calc($hmenu-space * 2);
+    width: $hmenu-width;
+    background-color: #000;
+    &.is-open {
+      top: calc($hmenu-space);
+      width: $hmenu-width;
+      transform: rotate(-405deg);
+      transition-duration: 0.4s;
+      transition-delay: 0.2s;
+    }
+  }
+}
+
+.c-globalmenu-inner {
+  width: 270px;
+  height: 100%;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  opacity: 0;
+  transition: 0.5s 0.3s;
+  z-index: 100;
+  overflow-y: auto;
+  @include mqS {
+    width: 100%;
+  }
+
+  &.is-show {
+    right: 0;
+    opacity: 1;
+  }
+
+  .p-globalmenu-navigation {
+    margin: 70px auto 0;
+    width: 250px;
+    opacity: 0;
+    transition: 1s;
+    transform: translateX(30px);
+    text-align: center;
+    @include mqS {
+      width: 90%;
+    }
+
+    &.on-animation {
+      opacity: 1;
+      transform: translateX(0px);
+      transition: 1s 0.4s cubic-bezier(0.18, 2.5, 0.1, 1.8);
+    }
+    .p-globalmenu-list {
+      .p-globalmenu-item {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+.p-globalmenu-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 99;
+  opacity: 0;
+  transition: 0.6s;
+  cursor: pointer;
+  &.is-active {
+    opacity: 1;
+    transition: 0.6s;
+  }
+}
+
+body {
+  &.is-fixed {
+    //メニュー表示中はスクロールさせない
+    position: fixed;
+    width: 100%;
+    top: 0;
+  }
+}

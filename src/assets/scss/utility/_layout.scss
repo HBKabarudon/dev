@@ -1,0 +1,150 @@
+@use "../global" as *;
+
+/* ===================================================================
+
+layout style
+
+=================================================================== */
+// position
+
+.pos-s {
+  position: static;
+}
+
+.pos-r {
+  position: relative;
+}
+
+.pos-a {
+  position: absolute;
+}
+
+.pos-f {
+  position: fixed;
+}
+
+.zi-m1 {
+  z-index: -1;
+}
+
+.zi-0 {
+  z-index: 0;
+}
+
+.zi-1 {
+  z-index: 1;
+}
+
+.zi-2 {
+  z-index: 2;
+}
+
+.zi-3 {
+  z-index: 3;
+}
+
+.zi-100 {
+  z-index: 100;
+}
+
+.zi-9999 {
+  z-index: 9999;
+}
+
+.top0 {
+  top: 0;
+}
+
+.bottom0 {
+  bottom: 0;
+}
+
+.left0 {
+  left: 0;
+}
+
+.right0 {
+  right: 0;
+}
+
+//display
+
+@include mqAll("d") {
+  &-i {
+    display: inline;
+  }
+  &-b {
+    display: block;
+  }
+  &-f {
+    display: flex;
+  }
+  &-ib {
+    display: inline-block;
+  }
+  &-if {
+    display: inline-flex;
+  }
+  &-n {
+    display: none;
+  }
+//   &-c {
+//     display: contents;
+//   }
+}
+
+//float
+.f-l {
+  float: left;
+}
+.f-r {
+  float: right;
+}
+.clr-b {
+  clear: both;
+}
+.clearfix {
+  @include clearfix;
+}
+
+//overflow
+
+@include mqAll("of") {
+  &-x-a {
+    overflow-x: auto;
+  }
+  &-x-v {
+    overflow-x: visible;
+  }
+  &-x-h {
+    overflow-x: hidden;
+  }
+  &-x-s {
+    overflow-x: scroll;
+  }
+  &-y-a {
+    overflow-x: auto;
+  }
+  &-y-v {
+    overflow-x: visible;
+  }
+  &-y-h {
+    overflow-x: hidden;
+  }
+  &-y-s {
+    overflow-x: scroll;
+  }
+  &-h {
+    overflow: hidden;
+  }
+}
+
+// object-fit
+
+.ofi {
+  object-fit: cover;
+  object-position: center;
+  font-family: "object-fit: cover;";
+  width: 100%;
+  height: 100%;
+}

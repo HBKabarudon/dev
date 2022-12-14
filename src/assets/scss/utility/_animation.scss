@@ -1,0 +1,185 @@
+@use "../global" as *;
+
+/* ===================================================================
+
+animation style
+
+=================================================================== */
+
+//hover時の色
+
+@each $key, $hovColor in $colorList {
+  .hov-color-#{$key} {
+    @include hover {
+      color: $hovColor;
+    }
+  }
+  a.hov-color-#{$key} {
+    @include hover {
+      color: $hovColor;
+    }
+  }
+  .hov-bg-#{$key} {
+    @include hover {
+      background-color: $hovColor;
+    }
+  }
+  .hov-bd-color-#{$key} {
+    @include hover {
+      border-color: $hovColor;
+    }
+  }
+}
+// :hover
+
+.hov-o {
+  transition: 0.2s;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.hov-y {
+  transition: 0.2s;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
+  }
+}
+
+//keyframes
+
+@keyframes cvBtn {
+  0% {
+    transform: translateX(-50%) scale(1);
+    animation-timing-function: ease-in;
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.1));
+  }
+  50% {
+    transform: translateX(-50%) scale(0.9);
+    animation-timing-function: ease-out;
+    filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.3));
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+    animation-timing-function: ease-in;
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.1));
+  }
+}
+
+@keyframes shakeIco {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(20deg);
+  }
+  20% {
+    transform: rotate(-20deg);
+  }
+  30% {
+    transform: rotate(10deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  60% {
+    transform: rotate(-5deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes bounceIco3 {
+  0% {
+    transform: translateY(0px);
+    animation-timing-function: ease-out;
+  }
+  20% {
+    transform: translateY(-10px);
+    animation-timing-function: ease-in;
+  }
+  40% {
+    transform: translateY(0px);
+    animation-timing-function: ease-out;
+  }
+  60% {
+    transform: translateY(-5px);
+    animation-timing-function: ease-in;
+  }
+  80% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes bounceIco2 {
+  0% {
+    transform: translateX(0px);
+  }
+  20% {
+    transform: translateX(3px);
+  }
+  40% {
+    transform: translateX(-3px);
+  }
+  60% {
+    transform: translateX(1px);
+  }
+  80% {
+    transform: translateX(-1px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes bounceIco {
+  0% {
+    transform: scaleY(1) translateY(0px);
+    transform-origin: center bottom;
+    animation-timing-function: ease-out;
+  }
+  15% {
+    transform: scaleY(0.8) translateY(0px);
+    transform-origin: center bottom;
+    animation-timing-function: ease-in;
+  }
+  30% {
+    transform: scaleY(1) translateY(0px);
+    transform-origin: center bottom;
+    animation-timing-function: ease-in;
+  }
+  37.5% {
+    transform: scaleY(1.1) translateY(-10px);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+  45% {
+    transform: scaleY(1) translateY(-10px);
+    transform-origin: center top;
+    animation-timing-function: ease-in;
+  }
+  60% {
+    transform: scaleY(1) translateY(0px);
+    transform-origin: center bottom;
+    animation-timing-function: ease-out;
+  }
+  70% {
+    transform: scaleY(0.95) translateY(0px);
+    transform-origin: center bottom;
+    animation-timing-function: ease-in;
+  }
+  80% {
+    transform: scaleY(1) translateY(0px);
+    transform-origin: center bottom;
+    animation-timing-function: ease-out;
+  }
+}

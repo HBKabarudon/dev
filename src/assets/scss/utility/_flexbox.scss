@@ -1,0 +1,94 @@
+@use "../global" as *;
+
+/* ===================================================================
+
+flexbox style
+
+=================================================================== */
+
+// flex周り
+
+.flex {
+  display: flex;
+}
+
+@include mqAll("fw") {
+  &-w {
+    flex-wrap: wrap;
+  }
+  &-nw {
+    flex-wrap: nowrap;
+  }
+}
+
+@include mqAll("fd") {
+  &-r {
+    flex-direction: row;
+  }
+  &-rr {
+    flex-direction: row-reverse;
+  }
+  &-c {
+    flex-direction: column;
+  }
+  &-cr {
+    flex-direction: column-reverse;
+  }
+}
+
+@include mqAll("jc") {
+  &-fs {
+    justify-content: flex-start;
+  }
+  &-c {
+    justify-content: center;
+  }
+  &-fe {
+    justify-content: flex-end;
+  }
+  &-sb {
+    justify-content: space-between;
+  }
+  &-sa {
+    justify-content: space-around;
+  }
+}
+
+@include mqAll("ai") {
+  &-fs {
+    align-items: flex-start;
+  }
+  &-c {
+    align-items: center;
+  }
+  &-fe {
+    align-items: flex-end;
+  }
+}
+
+@include mqAll("as") {
+  &-fs {
+    align-self: flex-start;
+  }
+  &-c {
+    align-self: center;
+  }
+  &-fe {
+    align-self: flex-end;
+  }
+  &-st {
+    align-self: stretch;
+  }
+}
+
+@include mqAll("fs") {
+  &-0 {
+    flex-shrink: 0;
+  }
+}
+
+@include mqAll("fg") {
+  &-0 {
+    flex-grow: 0;
+  }
+}

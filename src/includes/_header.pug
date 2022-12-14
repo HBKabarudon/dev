@@ -1,0 +1,43 @@
+//- PC用ヘッダー
+.is-pc-tb
+  header.header.bg-primary.flex.jc-sb.ai-c.pr-3p.pl-3p
+    .w-20p.tl
+      p
+        a(href='#')
+          img(src= alt='ロゴ')
+    nav
+      ul.flex.jc-fe
+        li.mr-sm
+          a.hov-o.fz-sm.d-color-wt(href='#') メニュー1
+        li.mr-sm
+          a.hov-o.fz-sm.d-color-wt(href='#') メニュー2
+        li.mr-sm
+          a.hov-o.fz-sm.d-color-wt(href='#') メニュー3
+        li.mr-sm
+          a.hov-o.fz-sm.d-color-wt(href='#') メニュー4
+        li
+          a.hov-o.fz-sm.d-color-wt(href='#') メニュー5
+//- SP用ヘッダー
+.is-sp
+  header.header.bg-primary.flex.jc-sb.ai-c.pr-3p.pl-3p
+    .w-20p.ta-l
+      p ロゴ
+    button.c-globalmenu-button.js-globalMenuButton(aria-label='サイトマップを開く' aria-expanded='false' aria-controls='globalmenu')
+      span.p-globalmenu-bar.p-globalmenu-bar--1.js-bar1
+      span.p-globalmenu-bar.p-globalmenu-bar--2.js-bar2
+      span.p-globalmenu-bar.p-globalmenu-bar--3.js-bar3
+    aside#globalmenu.c-globalmenu-inner.js-globalmenuInner(aria-hidden='true')
+      nav.p-globalmenu-navigation.js-globalmenuNavigation
+        ul.p-globalmenu-list
+          li.p-globalmenu-item
+            a.p-globalmenu-anchor.js-globalmenuAnchor(href= tabindex='-1') メニュー1
+          li.p-globalmenu-item
+            a.p-globalmenu-anchor.js-globalmenuAnchor(href= tabindex='-1') メニュー2
+          li.p-globalmenu-item
+            a.p-globalmenu-anchor.js-globalmenuAnchor(href= tabindex='-1') メニュー3
+          li.p-globalmenu-item
+            a.p-globalmenu-anchor.js-globalmenuAnchor(href= tabindex='-1') メニュー4
+          li.p-globalmenu-item
+            a.p-globalmenu-anchor.js-globalmenuAnchor(href= tabindex='-1') メニュー5
+          li.p-globalmenu-item
+            a.p-globalmenu-anchor.js-globalmenuAnchor.js-focusReset(href= tabindex='-1')

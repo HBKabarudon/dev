@@ -1,0 +1,185 @@
+@use "../global" as *;
+
+/* ===================================================================
+
+spacing style
+
+=================================================================== */
+
+/* margin(padding) top bottom用汎用class */
+
+@include mqAll("mb") {
+  @each $key, $space in $spacesList {
+    &-#{$key} {
+      margin-bottom: $space;
+    }
+  }
+}
+
+@include mqAll("mt") {
+  @each $key, $space in $spacesList {
+    &-#{$key} {
+      margin-top: $space;
+    }
+  }
+}
+
+@include mqAll("pt") {
+  @each $key, $space in $spacesList {
+    &-#{$key} {
+      padding-top: $space;
+    }
+  }
+}
+
+@include mqAll("pb") {
+  @each $key, $space in $spacesList {
+    &-#{$key} {
+      padding-bottom: $space;
+    }
+  }
+}
+
+/* margin-left margin-right px用汎用class */
+
+@include mqAll("mr") {
+  @each $key, $space in $spacesList {
+    &-#{$key} {
+      margin-right: $space;
+    }
+  }
+}
+
+@include mqAll("ml") {
+  @each $key, $space in $spacesList {
+    &-#{$key} {
+      margin-left: $space;
+    }
+  }
+}
+
+/* margin-left margin-right %用汎用class */
+
+@include mqAll("mr") {
+  @for $i from 0 through 20 {
+    &-#{$i}p {
+      margin-right: percentage(calc($i / 100));
+    }
+  }
+}
+
+@include mqAll("ml") {
+  @for $i from 0 through 20 {
+    &-#{$i}p {
+      margin-left: percentage(calc($i / 100));
+    }
+  }
+}
+
+/* margin-left margin-right vw用汎用class */
+
+@include mqAll("mr") {
+  @for $i from 0 through 20 {
+    &-#{$i}vw {
+      margin-right: $i + vw;
+    }
+  }
+}
+
+@include mqAll("ml") {
+  @for $i from 0 through 20 {
+    &-#{$i}vw {
+      margin-left: $i + vw;
+    }
+  }
+}
+
+/* padding-left padding-right px用汎用class */
+
+@include mqAll("pr") {
+  @each $key, $space in $spacesList {
+    &-#{$key} {
+      padding-right: $space;
+    }
+  }
+}
+
+@include mqAll("pl") {
+  @each $key, $space in $spacesList {
+    &-#{$key} {
+      padding-left: $space;
+    }
+  }
+}
+
+/* padding-left padding-right %汎用class */
+
+@include mqAll("pr") {
+  @for $i from 0 through 20 {
+    &-#{$i}p {
+      padding-right: percentage(calc($i / 100));
+    }
+  }
+}
+
+@include mqAll("pl") {
+  @for $i from 0 through 20 {
+    &-#{$i}p {
+      padding-left: percentage(calc($i / 100));
+    }
+  }
+}
+
+/* padding-left padding-right vw汎用class */
+
+@include mqAll("pr") {
+  @for $i from 0 through 20 {
+    &-#{$i}vw {
+      padding-right: $i + vw;
+    }
+  }
+}
+
+@include mqAll("pl") {
+  @for $i from 0 through 20 {
+    &-#{$i}vw {
+      padding-left: $i + vw;
+    }
+  }
+}
+
+/* gap 汎用class */
+
+@include mqAll("gap") {
+  @if $gapClass {
+    @for $i from 0 through 20 {
+      &-#{$i}p {
+        gap: percentage(calc($i / 100));
+      }
+    }
+  }
+}
+
+// padding汎用class(settings.scssでON/OFF設定)
+/* padding汎用class */
+
+@include mqAll("pd") {
+  @if $paddingClass {
+    @for $i from 0 through 10 {
+      &-#{$i}p {
+        padding: percentage(calc($i / 100));
+      }
+    }
+  }
+}
+
+//左・右寄せ
+
+@include mqAll("m") {
+  &l-a {
+    margin-left: auto;
+  }
+  &r-a {
+    margin-right: auto;
+  }
+}

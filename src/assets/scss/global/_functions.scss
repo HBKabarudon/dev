@@ -1,0 +1,16 @@
+@use "settings" as s;
+
+//TB用 remをvwに変換する
+// 第一引数：変換させたいrem値(1rem),第二引数(オプション)：breakpoint値(1025px)
+// 例；font-size: rem-vw(1.6rem,1024px);
+@function rem-vw($remValue: 1, $remBreakpoint: s.$breakpointM) {
+  $remVal: calc(calc($remValue * 10) / 1);
+  @return calc(calc($remVal / ($remBreakpoint / 1px)) * 100) + vw;
+}
+
+// settingsで設定されているカラーを取得する
+// 例；color: color(primary);
+
+@function color($color) {
+  @return map-get(s.$colorList, $color);
+}

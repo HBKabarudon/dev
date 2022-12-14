@@ -1,0 +1,31 @@
+<head>
+  <meta charset="utf-8" />
+  <title>
+    <%= title %>
+  </title>
+  <meta name="description" content="<%= description %>" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=overlays-content">
+  <meta name="format-detection" content="telephone=no, email=no, address=no" <%#　SP表示時に電話番号・メールアドレス・住所への自動リンクを無効化 %>>
+  <meta name="robots" content="noindex,nofollow" <%#　検索にヒットさせない・ページをインデックスさせない %> />
+  <meta property="og:url" <%# content=" ページのURL" %> />
+  <meta property="og:title" <%# content=" ページのタイトル" %> />
+  <meta property="og:type" <%# content=" ページのタイプ トップページの場合websiteまたはblog、下層ページはarticle" %> />
+  <meta property="og:description" <%# content=" 記事の抜粋" %> />
+  <meta property="og:image" <%# content=" 画像のURL(絶対パス推奨)"" %> />
+  <meta name=" twitter:card" <%# content=" カードの種類" %> />
+  <meta name="twitter:site" <%# content=" @twitterユーザー名" %> />
+  <meta property="og:site_name" <%# content=" サイト名" %> />
+  <meta property="og:locale" content="ja_JP" <%#　国を設定 %> />
+  <meta name="color-scheme" content="light dark" / <%# ライトモード ダークモードの設定 %>>
+  <link rel="canonical" <%# href="SEO評価統一したいURL" %> / <%# SP用htmlの場合に、href="PC用のURL" を記述 %>>
+  <link rel="icon" <%# href="画像URL" %> sizes="16x16" type="image/png" <%# faviconを記述 %> />
+  <link rel="icon" <%# href="画像URL" %> sizes="32x32" type="image/png" <%# faviconを記述 %> />
+  <link rel="icon" <%# href="画像URL" %> sizes="48x48" type="image/png" <%# faviconを記述 %> />
+  <link rel="icon" <%# href="画像URL" %> sizes="62x62" type="image/png" <%# faviconを記述 %> />
+  <link rel="apple-touch-icon-precomposed" <%# href="画像のURL" SPホーム画面設置時のアイコン%> />
+  <%#　リダイレクト <meta http-equiv=”refresh” content="5;URL='sample2.html'">%>
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#C78F8F"><%#　ライトモードのテーマカラー %>
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#4A3A3A"><%#　ダークモードのテーマカラー %>
+  <link rel="preload" <%# href=“プリロードさせる画像パス” %> as="image" media="(max-width: 767px)"><%#　プリロード PC %>
+  <link rel="preload" <%# href=“プリロードさせる画像パス” %> as="image" media="(min-width: 768px)"><%#　プリロード SP %>
+</head>

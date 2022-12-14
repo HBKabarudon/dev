@@ -1,0 +1,196 @@
+@use "../global" as *;
+
+/* ===================================================================
+
+typography style
+
+=================================================================== */
+/* font-size汎用class */
+@include mqAll("fz") {
+  @each $key, $fz in $fontSizeList {
+    &-#{$key} {
+      font-size: clamp(calc(#{$fz} * 1rem), calc(1rem + calc(#{$fz} - 1) * (calc(100vw - 64.0625rem) / calc(120 - 64.0625))), calc(#{$fz}* 2rem));
+      min-height: 0vw;
+      @include mqSM {
+        font-size: clamp(1rem, calc(1rem + calc(#{$fz} - 1) * (calc(100vw - 48rem) / calc(64 - 48))), calc(#{$fz}* 1.2rem));
+        min-height: 0vw;
+      }
+      @include mqS {
+        font-size: clamp(1rem, calc(1rem + (#{$fz} - 1) * (calc(100vw - 20rem) / calc(47.9375 - 20))), calc(#{$fz}* 1.2rem));
+        min-height: 0vw;
+      }
+    }
+  }
+}
+
+// font-family
+.font-secondary {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.font-tertiary {
+  font-family: "Lato", sans-serif;
+}
+
+/* letter-spacing汎用class */
+@each $key, $ls in $letterSpacingList {
+  .ls-#{$key} {
+    letter-spacing: $ls;
+  }
+}
+
+/* color系汎用class */
+@each $key, $color in $colorList {
+  .color-#{$key} {
+    color: $color;
+  }
+  a.color-#{$key} {
+    color: $color;
+  }
+}
+
+//ダークモード color
+.d-color-wt {
+  @include mdD {
+    color: color(wt) !important;
+  }
+}
+
+//text-align
+@include mqAll("ta") {
+  &-l {
+    text-align: left;
+  }
+  &-c {
+    text-align: center;
+  }
+  &-r {
+    text-align: right;
+  }
+}
+
+//font-weight
+
+.fw-b {
+  font-weight: bold;
+}
+
+.fw-n {
+  font-weight: normal;
+}
+
+.fw-100 {
+  font-weight: 100;
+}
+
+.fw-200 {
+  font-weight: 200;
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+//text-decoration
+
+.td-ul {
+  text-decoration: underline;
+}
+
+.td-n {
+  text-decoration: none;
+}
+
+@for $i from 1 through 5 {
+  .tu-o-#{$i} {
+    text-underline-offset: #{$i}+ "px";
+  }
+}
+
+// line-height
+@each $key, $lh in $lineHeightList {
+  .lh-#{$key} {
+    line-height: $lh;
+  }
+}
+
+// writing-mode
+.wm-v-lr {
+  writing-mode: vertical-lr;
+}
+.wm-v-rl {
+  writing-mode: vertical-rl;
+}
+.wm-h {
+  writing-mode: horizontal-tb;
+}
+
+//text-orientation
+.to-ur {
+  text-orientation: upright;
+}
+.to-i {
+  text-orientation: initial;
+}
+//vertical-align
+
+.va-t {
+  vertical-align: top;
+}
+
+.va-m {
+  vertical-align: middle;
+}
+
+.va-b {
+  vertical-align: bottom;
+}
+
+.va-bl {
+  vertical-align: baseline;
+}
+
+.va-tt {
+  vertical-align: text-top;
+}
+
+//wordbreak
+
+.wb-ba {
+  word-break: break-all;
+}
+
+.wb-bw {
+  word-break: break-word;
+}
+
+// white-space
+
+.ws-n {
+  white-space: normal;
+}
+
+.ws-nw {
+  white-space: nowrap;
+}
+
+//text-transform
+.tt-uc {
+  text-transform: uppercase;
+}

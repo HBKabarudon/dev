@@ -1,0 +1,88 @@
+@use "../global" as *;
+
+/* ===================================================================
+
+state style
+
+=================================================================== */
+
+/* color系汎用class */
+@each $key, $color in $colorList {
+  .bg-#{$key} {
+    background-color: $color;
+  }
+}
+
+//ダークモード 背景色
+.d-bg-bk {
+  @include mdD {
+    background-color: color(bk) !important;
+  }
+}
+
+//opacity
+
+/* opacity汎用class */
+@for $i from 0 through 10 {
+  .op-#{$i} {
+    opacity: calc($i / 10);
+  }
+}
+
+// PC・SPのオンオフ
+
+.is-pc {
+  display: block !important;
+
+  @include mqS {
+    display: none !important;
+  }
+
+  @include mqSM {
+    display: none !important;
+  }
+}
+
+.is-tb {
+  display: none !important;
+  @include mqS {
+    display: none !important;
+  }
+  @include mqSM {
+    display: block !important;
+  }
+}
+
+.is-sp {
+  display: none !important;
+
+  @include mqS {
+    display: block !important;
+  }
+
+  @include mqSM {
+    display: none !important;
+  }
+}
+
+.is-pc-tb {
+  display: block !important;
+
+  @include mqS {
+    display: none !important;
+  }
+
+  @include mqSM {
+    display: block !important;
+  }
+}
+
+.is-tb-sp {
+  display: none;
+  @include mqSM {
+    display: block !important;
+  }
+  @include mqS {
+    display: block !important;
+  }
+}

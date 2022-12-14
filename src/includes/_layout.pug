@@ -1,0 +1,12 @@
+block config
+  include _config.pug
+doctype html
+html(lang="ja")
+include _head.pug
+body
+  #wrap
+    include _header.pug
+    main
+      block pageContent
+    include _footer.pug
+  include _script.pug

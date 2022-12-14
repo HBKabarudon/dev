@@ -1,0 +1,58 @@
+@use "../global" as *;
+
+/* ===================================================================
+
+init style
+
+=================================================================== */
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $primaryFont;
+  font-weight: $primaryFontWeight;
+  font-size: map-get($fontSizeList, "sm") + rem;
+  line-height: 1.7;
+  font-feature-settings: "palt";
+  color: color(bk);
+  background: color(wt);
+  @include mdD {
+    background-color: color(bk);
+    color: color(wt);
+  }
+}
+
+@media all and (-ms-high-contrast: none) {
+  body {
+    width: 100%;
+  }
+}
+
+#wrap {
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  @media only screen and (min-width: 1001px) {
+    max-width: initial;
+    margin: 0 auto;
+    width: 100%;
+    img {
+      max-width: 100%;
+    }
+  }
+  @include mqSM {
+    max-width: initial;
+    margin: 0 auto;
+  }
+  @include mqS {
+    max-width: $breakpointS;
+    margin: 0 auto;
+  }
+}
+
+*:focus-visible:not(input):not(textarea) {
+  outline: 1px solid #333;
+}
+

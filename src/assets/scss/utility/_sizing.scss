@@ -1,0 +1,76 @@
+@use "../global" as *;
+
+/* ===================================================================
+
+sizing style
+
+=================================================================== */
+// width汎用class(settings.scssでON/OFF設定)
+
+@include mqAll("w") {
+  @if $widthClass {
+    &-mc {
+      width: max-content;
+    }
+  }
+}
+
+@include mqAll("w") {
+  @if $widthClass {
+    @for $i from 0 through 100 {
+      &-#{$i}p {
+        width: percentage(calc($i / 100));
+      }
+    }
+  }
+}
+
+@include mqAll("w") {
+  @if $widthClass {
+    @for $i from 0 through 100 {
+      &-#{$i}vw {
+        width: $i + vw;
+      }
+    }
+  }
+}
+
+.max-w-100 {
+  max-width: 100%;
+}
+
+// height汎用class(settings.scssでON/OFF設定)
+
+@include mqAll("h") {
+  @if $heightClass {
+    @for $i from 0 through 100 {
+      &-#{$i}vw {
+        height: $i + vw;
+      }
+    }
+  }
+}
+
+@include mqAll("h") {
+  @if $heightClass {
+    @for $i from 0 through 100 {
+      &-#{$i}vh {
+        height: $i + vh;
+      }
+    }
+  }
+}
+
+@include mqAll("h") {
+  @if $heightClass {
+    @for $i from 0 through 100 {
+      &-#{$i}p {
+        height: percentage(calc($i / 100));
+      }
+    }
+  }
+}
+
+.h-m-100p {
+  max-height: 100%;
+}

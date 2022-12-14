@@ -1,0 +1,105 @@
+// framework version 1.0.0
+
+// media queryのbreakpoint値
+$breakpointS: 768px;
+$breakpointM: 1025px;
+$breakpointL: 1400px;
+
+$bpClass: (
+  "sp": "(max-width: #{$breakpointS - 1})",
+  "tb": "(min-width: #{$breakpointS}) and (max-width: #{$breakpointM - 1})",
+) !default;
+
+// margin,paddingの汎用サイズ
+$spacesList: (
+  xs: 10px,
+  s: 20px,
+  sm: 30px,
+  m: 40px,
+  ml: 60px,
+  l: 80px,
+  xl: 100px,
+);
+
+// フォントサイズ
+$fontSizeList: (
+  xss: 1,
+  xs: 1.2,
+  s: 1.4,
+  sm: 1.6,
+  m: 1.8,
+  ml: 2,
+  l: 2.4,
+  xl: 2.8,
+  xl3: 3,
+  xl4: 4,
+  xl5: 5,
+  xl6: 6,
+  xl7: 7,
+  xl8: 8,
+  xl9: 9,
+  xl10: 10,
+  xl11: 11,
+  xl12: 12,
+  xl13: 13,
+  xl14: 14,
+  xl15: 15,
+  xl16: 16,
+  xl17: 17,
+  xl18: 18,
+  xl19: 19,
+  xl20: 20,
+);
+
+// letteer spacing
+$letterSpacingList: (
+  s: 0.1em,
+  m: 0.2em,
+  l: 0.35em,
+);
+
+// line-height
+$lineHeightList: (
+  s: 1,
+  sm: 1.2,
+  m: 1.5,
+  ml: 1.8,
+  l: 2,
+  xl: 2.4,
+);
+
+// 色
+$colorList: (
+  primary: #f29d20,
+  secondary: #fcf8ed,
+  accent: #63a99a,
+  caution: #f23420,
+  add1: #fce3a0,
+  wt: #fff,
+  bk: #2b2b2b,
+);
+
+// border-radius
+$borderRadiusList: (
+  s: 10px,
+  sm: 20px,
+  m: 30px,
+  ml: 40px,
+  l: 50px,
+  xl: 50%,
+);
+
+// 基本フォント
+$primaryFont: sans-serif;
+$primaryFontWeight: 400;
+
+// utilityクラスを出力するか設定 trueで出力、falseで出力なし
+$spaceClass: true !default;
+$spacePadding: true !default;
+$marginLRClass: true !default;
+$paddingLRClass: true !default;
+$gapClass: true !default;
+$paddingClass: true !default;
+$darkMode: false !default;
+$widthClass: true !default;
+$heightClass: true !default;
