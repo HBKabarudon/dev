@@ -1,2 +1,3 @@
-# dev
-開発環境
+# 開発環境  
+npm init -y  
+npm i  
